@@ -1,0 +1,2 @@
+#!/bin/bash
+docker run --user "$(id -u)" --rm -v "$(pwd)":/dastardly -e DASTARDLY_TARGET_URL="$(circleci env subst "${PARAM_TARGET_URL}")" -e DASTARDLY_OUTPUT_FILE=/dastardly/"$(circleci env subst "${PARAM_OUTPUT_FILENAME}")" public.ecr.aws/portswigger/dastardly:latest

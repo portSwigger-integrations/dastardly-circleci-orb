@@ -1,14 +1,14 @@
 version: 2.1
 
 description: >
-  Sample orb description
+  This action runs a Dastardly vulnerability scan against a target site. On completion, a JUnit XML report is generated containing information about the vulnerabilities found, where they were located, additional information about the vulnerability and links to our learning resources with suggestions on how to fix them.
 # What will your orb allow users to accomplish?
 # Descriptions should be short, simple, and informative.
 
 # This information will be displayed in the orb registry and is not mandatory.
 display:
-  home_url: "https://www.example.com/docs"
-  source_url: "https://github.com/portSwigger-integrations/dastardly-circleci-orb"
+  home_url: "https://portswigger.net/burp/documentation/dastardly"
+  source_url: "https://portswigger.net/burp/documentation/dastardly" #"https://github.com/portSwigger-integrations/dastardly-circleci-orb"
 
 # If your orb requires other orbs, you can import them like this. Otherwise remove the "orbs" stanza.
 # orbs:
