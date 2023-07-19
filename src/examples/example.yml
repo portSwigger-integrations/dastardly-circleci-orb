@@ -6,8 +6,18 @@ description: >
 usage:
   version: 2.1
   orbs:
-    <orb-name>: <namespace>/<orb-name>@1.2.3
+    dastardly: portswigger/dastardly@1.0.0
+  jobs:
+  # Create jobs to test the commands of your orbs.
+  # You may want to add additional validation steps to ensure the commands are working as expected.
+  scan-test:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: medium
+    steps:
+      - dastardly/dast_scan:
+          target_url: "https://ginandjuice.shop"
   workflows:
     use-my-orb:
       jobs:
-        - <orb-name>/<job-name>
+        - scan-test
