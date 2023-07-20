@@ -35,7 +35,7 @@ Below is an example of how to use the orb by running a Dastardly scan against ou
 usage:
   version: 2.1
   orbs:
-    dastardly: portswigger/dastardly-test@1.0.0
+    dastardly: portswigger/dastardly@1.0.0
   jobs:
     scan-example:
       machine:
@@ -62,7 +62,7 @@ usage:
 usage:
   version: 2.1
   orbs:
-    dastardly: portswigger/dastardly-test@1.0.0
+    dastardly: portswigger/dastardly@1.0.0
   jobs:
     scan-example:
       machine:

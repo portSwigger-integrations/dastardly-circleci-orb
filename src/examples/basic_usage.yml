@@ -4,7 +4,7 @@ description: >
 usage:
   version: 2.1
   orbs:
-    dastardly: portswigger/dastardly-test@1.0.0
+    dastardly: portswigger/dastardly@1.0.0
   jobs:
     scan-example:
       machine:
