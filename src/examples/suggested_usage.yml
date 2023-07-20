@@ -1,0 +1,23 @@
+description: >
+  Dastardly produces a JUnit XML report of the scan on completion. This report will only include vulnerability details if vulnerabilities were found by the scanner.
+  If Dastardly finds any issue with a severity level of LOW, MEDIUM, or HIGH, it will fail a workflow build.
+
+usage:
+  version: 2.1
+  orbs:
+    dastardly: portswigger/dastardly-test@1.0.0
+  jobs:
+    scan-example:
+      machine:
+        image: ubuntu-2204:current
+      resource_class: medium
+      steps:
+        - dastardly/scan:
+            target_url: "https://ginandjuice.shop"
+            output_filename: "scan_report.xml"
+        - store_test_results:
+            path: "scan_report.xml"
+  workflows:
+    use-my-orb:
+      jobs:
+        - scan-example

@@ -1,0 +1,20 @@
+description: >
+  Scan a URL with Dastardly
+# What will this job do?
+
+parameters:
+    target_url:
+        type: string
+        description: The full URL (including scheme) of the site to scan.
+    output_filename:
+        type: string
+        description: The name of the output report file. This will be stored in the CIRCLE_WORKING_DIRECTORY (/home/circleci/project) directory.
+        default: "dastardly-report.xml"
+
+steps:
+    - run:
+        environment:
+          PARAM_TARGET_URL: <<parameters.target_url>>
+          PARAM_OUTPUT_FILENAME: <<parameters.output_filename>>
+        name: Run scan
+        command: <<include(scripts/run_dastardly_scan.sh)>>

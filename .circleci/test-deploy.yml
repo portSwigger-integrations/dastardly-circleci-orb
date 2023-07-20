@@ -27,7 +27,7 @@ jobs:
       image: ubuntu-2204:current
     resource_class: medium
     steps:
-      - dastardly/dast_scan:
+      - dastardly/scan:
           target_url: "https://ginandjuice.shop"
 workflows:
   test-deploy:
