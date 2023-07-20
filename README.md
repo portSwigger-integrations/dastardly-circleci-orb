@@ -1,8 +1,8 @@
-# Dastardly Scan Orb
+# Dastardly Scan CircleCI Orb
 
 [![CircleCI Build Status](https://circleci.com/gh/portSwigger-integrations/dastardly-circleci-orb.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/portSwigger-integrations/dastardly-circleci-orb) [![CircleCI Orb Version](https://badges.circleci.com/orbs/portswigger/dastardly.svg)](https://circleci.com/developer/orbs/orb/portswigger/dastardly) [![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/portSwigger-integrations/dastardly-circleci-orb/master/LICENSE) [![CircleCI Community](https://img.shields.io/badge/community-CircleCI%20Discuss-343434.svg)](https://discuss.circleci.com/c/ecosystem/orbs)
 
-This orb runs a Dastardly vulnerability scan against a target site. On completion, a JUnit XML report is generated containing information about the vulnerabilities found, where
+This [CircleCI orb](https://circleci.com/orbs/) runs a Dastardly vulnerability scan against a target site. On completion, a JUnit XML report is generated containing information about the vulnerabilities found, where
 they were located, additional information about the vulnerability and links to our learning resources with suggestions on how to fix them.
 
 ## About Dastardly
@@ -28,7 +28,7 @@ Already used Dastardly? [Tell us what you think here](https://forms.gle/8Va7ombB
 **Default** `dastardly-report.xml`
 
 ## Examples
-Below is an example of how to use the orb by running a Dastardly scan against our very own Gin and Juice Shop (https://ginandjuice.shop) site. This is a deliberately vulnerable web application designed for testing web vulnerability scanners.
+Below is an example of how to use the orb by running a Dastardly scan against our very own [Gin and Juice Shop](https://ginandjuice.shop) site. This is a deliberately vulnerable web application designed for testing web vulnerability scanners.
 
 ## Basic Usage
 ```
@@ -54,7 +54,9 @@ usage:
 
 ## Suggested Usage
   Dastardly produces a JUnit XML report of the scan on completion. This report will only include vulnerability details if vulnerabilities were found by the scanner.
-  If Dastardly finds any issue with a severity level of LOW, MEDIUM, or HIGH, it will fail a workflow build.
+  If Dastardly finds any issue with a severity level of `LOW`, `MEDIUM`, or `HIGH`, it will fail a workflow build.
+
+  When you run tests in CircleCI there are two ways to store your test results. You can either use [artifacts](https://circleci.com/docs/artifacts/) or the [`store_test_results`](https://circleci.com/docs/configuration-reference/#storetestresults) step. Documentation for collecting test data can be found [here](https://circleci.com/docs/collect-test-data/).
 
 ```
 usage:
