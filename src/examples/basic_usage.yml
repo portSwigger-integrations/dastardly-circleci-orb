@@ -1,6 +1,5 @@
 description: >
   Below is an example of how to use the orb by running a Dastardly scan against our very own Gin and Juice Shop (https://ginandjuice.shop) site. This is a deliberately vulnerable web application designed for testing web vulnerability scanners.
-
 usage:
   version: 2.1
   orbs:
@@ -11,6 +10,7 @@ usage:
         image: ubuntu-2204:current
       resource_class: medium
       steps:
+        - checkout
         - dastardly/scan:
             target_url: "https://ginandjuice.shop"
             output_filename: "scan_report.xml"

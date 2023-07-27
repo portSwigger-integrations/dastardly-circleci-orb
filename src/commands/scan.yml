@@ -1,6 +1,5 @@
 description: >
-  Scan a URL with Dastardly
-# What will this job do?
+  Run a Dastardly vulnerability scan against a target site.
 
 parameters:
     target_url:
@@ -10,11 +9,15 @@ parameters:
         type: string
         description: The name of the output report file. This will be stored in the CIRCLE_WORKING_DIRECTORY (/home/circleci/project) directory.
         default: "dastardly-report.xml"
+    fail_on_failure:
+        type: boolean
+        default: true
 
 steps:
     - run:
         environment:
           PARAM_TARGET_URL: <<parameters.target_url>>
           PARAM_OUTPUT_FILENAME: <<parameters.output_filename>>
+          PARAM_FAIL_ON_FAILURE: <<parameters.fail_on_failure>>
         name: Run scan
         command: <<include(scripts/run_dastardly_scan.sh)>>
