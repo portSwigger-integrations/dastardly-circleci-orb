@@ -6,4 +6,4 @@ description: >
 
 display:
   home_url: "https://portswigger.net/burp/dastardly"
-  # source_url: "https://github.com/portSwigger-integrations/dastardly-circleci-orb"
+  source_url: "https://github.com/portSwigger-integrations/dastardly-circleci-orb"
