@@ -1,12 +1,8 @@
 version: 2.1
 
 description: >
-  This orb runs a Dastardly vulnerability scan against a target site. On completion, a JUnit XML report is generated containing information about the vulnerabilities found, where
-  they were located, additional information about the vulnerability and links to our learning resources with suggestions on how to fix them.
-
+  This orb runs a Dastardly vulnerability scan against a target site. On completion, a JUnit XML report is generated containing information about the vulnerabilities found.
   For full documentation on using Dastardly, please consult the Dastardly documentation (https://portswigger.net/burp/documentation/dastardly).
-
-  Already used Dastardly? Tell us what you think here: https://forms.gle/8Va7ombB793HqFKw5.
 
 display:
   home_url: "https://portswigger.net/burp/dastardly"
