@@ -11,6 +11,7 @@ parameters:
         default: "dastardly-report.xml"
     fail_on_failure:
         type: boolean
+        description: Fails the workflow if the scanner finds any issue with a severity level of `LOW`, `MEDIUM`, or `HIGH` or returns an error.
         default: true
 
 steps:

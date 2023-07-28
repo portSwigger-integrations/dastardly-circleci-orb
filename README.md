@@ -26,6 +26,12 @@ Already used Dastardly? [Tell us what you think here](https://forms.gle/8Va7ombB
 
 The default value is `dastardly-report.xml`
 
+### `fail_on_failure`
+
+(Optional) Fails the workflow if the scanner finds any issue with a severity level of `LOW`, `MEDIUM`, or `HIGH` or returns an error.
+
+The default value is `true`
+
 ## Results
 
 Dastardly produces a JUnit XML report when the scan completes. This report includes:
@@ -45,7 +51,7 @@ Below is an example of how to use the orb by running a Dastardly scan against ou
 usage:
   version: 2.1
   orbs:
-    dastardly: portswigger/dastardly@<version_number>
+    dastardly: portswigger/dastardly-test@1.0.0
   jobs:
     scan-example:
       machine:
@@ -71,7 +77,7 @@ The examples below show how to display the vulnerability report in the **Tests**
 usage:
   version: 2.1
   orbs:
-    dastardly: portswigger/dastardly@<version_number>
+    dastardly: portswigger/dastardly-test@1.0.0
   jobs:
     scan-with-test-results:
       machine:
