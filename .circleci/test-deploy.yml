@@ -27,6 +27,7 @@ jobs:
           fail_on_failure: false
       - store_test_results:
           path: "dastardly-report.xml"
+      - run: test -f "dastardly-report.xml"
   
 workflows:
   test-deploy:
